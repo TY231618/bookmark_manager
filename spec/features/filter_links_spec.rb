@@ -7,7 +7,7 @@ feature 'filtering of tags' do
     fill_in('tag', with: 'bubbles')
 
     click_button('Create New')
-    visit('/links/tags/bubbles')
+    visit('/links/bubbles')
     expect(page).to have_content('bubbles')
   end
 end
