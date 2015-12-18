@@ -23,7 +23,7 @@ class BookmarkManager < Sinatra::Base
 
   post '/links' do
     link = Link.create(url: params[:url], title: params[:title])
-    params[:tag].split.each do |tag|
+    params[:tag].split(', ').each do |tag|
     link.tags << Tag.create(tag: tag)
    end
     link.save

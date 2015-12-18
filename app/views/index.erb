@@ -5,7 +5,7 @@
     <%= link.id %>
     title: <%= link.title %>
     url: <a href="<%= link.url %>"><%= link.url %></a>
-    tags: <%= link.tags.map(&:tag).join("") %>
+    tags: <%= link.tags.map(&:tag).join(" ") %>
   </li>
   <% end %>
 </ul>
