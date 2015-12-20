@@ -20,10 +20,10 @@ feature 'filtering of tags' do
     visit('/links/new')
     fill_in('title', with: 'Jose')
     fill_in('url', with: 'http://www.bbc.co.uk/sport/0/football/34670192')
-    fill_in('tag', with: 'football sacked')
+    fill_in('tag', with: 'football, sacked')
 
     click_button('Create New')
     link = Link.first
-    expect(link.tags.map(&:tag)).to include('football', 'sacked')
+    expect(link.tags.map(&:tag)).to include("football", "sacked")
   end
 end
