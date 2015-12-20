@@ -21,7 +21,7 @@ class BookmarkManager < Sinatra::Base
     if user.save
       redirect '/links'
     else
-      flash.now[:notice] = 'Your passwords do not match!'
+      flash.now[:errors] = user.errors.full_messages
       erb(:users)
     end
   end
